@@ -10,6 +10,14 @@ public class NavigationHelper extends HelperBase {
   }
 
   public void gotoGroupPage() {
-    clic(By.linkText("groups"));
+    click(By.linkText("groups"));
+  }
+
+  public void gotoNewContactCreationPage() {
+    click(By.linkText("add new"));
+  }
+
+  public void returnToHomePage() {
+    click(By.linkText("home"));
   }
 }
