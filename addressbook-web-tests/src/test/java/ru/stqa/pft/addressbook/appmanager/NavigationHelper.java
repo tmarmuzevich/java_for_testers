@@ -17,7 +17,11 @@ public class NavigationHelper extends HelperBase {
     click(By.linkText("add new"));
   }
 
-  public void returnToHomePage() {
+  public void goToHomePage() {
     click(By.linkText("home"));
+  }
+
+  public void closeAlert() {
+    wd.switchTo().alert().accept();
   }
 }

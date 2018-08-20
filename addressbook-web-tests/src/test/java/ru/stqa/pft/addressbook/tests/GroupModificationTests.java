@@ -16,4 +16,4 @@ public class GroupModificationTests extends TestBase {
 
   }
 
-} 
+}

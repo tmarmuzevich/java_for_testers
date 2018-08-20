@@ -23,5 +23,22 @@ public class ContactHelper extends HelperBase {
   }
 
 
+  public void selectContact() {
+    if (!wd.findElement(By.id("9")).isSelected()) {
+      wd.findElement(By.id("9")).click();
+    }
+  }
+
+  public void deleteSelectedContact() {
+    click (By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+  }
+  public void deleteContact() {
+    click(By.xpath("//div[@id='content']/form[2]/input[2]"));
+  }
+
+  public void goToEditPage() {
+    click (By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+  }
+
 
 }
