@@ -24,8 +24,8 @@ public class ContactHelper extends HelperBase {
 
 
   public void selectContact() {
-    if (!wd.findElement(By.id("9")).isSelected()) {
-      wd.findElement(By.id("9")).click();
+    if (!wd.findElement(By.xpath("//div/div[4]/form[2]/table/tbody/tr[2]/td[1]/input")).isSelected()) {
+      wd.findElement(By.xpath("//div/div[4]/form[2]/table/tbody/tr[2]/td[1]/input")).click();
     }
   }
 
