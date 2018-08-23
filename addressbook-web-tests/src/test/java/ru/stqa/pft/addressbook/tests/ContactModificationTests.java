@@ -11,7 +11,7 @@ public class ContactModificationTests extends TestBase {
 
     app.getNavigationHelper().goToHomePage();
     app.getContactHelper().goToEditPage();
-    app.getContactHelper().fillContactForm(new ContactData("Tanya", "Marmuzevich", "murza", "A1QA", "Minsk, Rafieva str", "+375297634002", "tmarmuzevich@gmail.com", "1987"));
+    app.getContactHelper().fillContactForm(new ContactData("Tanya", "Marmuzevich", "murza", "A1QA", "Minsk, Rafieva str", "+375297634002", "tmarmuzevich@gmail.com", "1987", "null"), false);
     app.getContactHelper().submitContactModification();
     app.getNavigationHelper().goToHomePage();
 
@@ -24,7 +24,7 @@ public class ContactModificationTests extends TestBase {
     app.getNavigationHelper().goToHomePage();
     app.getContactHelper().goToDetailsPage();
     app.getContactHelper().initModification();
-    app.getContactHelper().fillContactForm(new ContactData("Tanya", "Marmuzevich", "murza", "A1QA", "Minsk, Rafieva str", "+375297634002", "tmarmuzevich@gmail.com", "1987"));
+    app.getContactHelper().fillContactForm(new ContactData("Tanya", "Marmuzevich", "murza", "A1QA", "Minsk, Rafieva str", "+375297634002", "tmarmuzevich@gmail.com", "1987", null), false);
     app.getContactHelper().submitContactModification();
     app.getNavigationHelper().goToHomePage();
 
