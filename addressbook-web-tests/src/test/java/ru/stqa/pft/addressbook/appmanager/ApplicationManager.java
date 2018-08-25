@@ -25,11 +25,11 @@ public class ApplicationManager {
 
 
   public void init() {
-    if (browser.equals(BrowserType.FIREFOX)){
+    if (browser.equals(BrowserType.FIREFOX)) {
       wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
-    } else if (browser.equals(BrowserType.CHROME)){
+    } else if (browser.equals(BrowserType.CHROME)) {
       wd = new ChromeDriver();
-    } else if (browser.equals(BrowserType.IE)){
+    } else if (browser.equals(BrowserType.IE)) {
       wd = new InternetExplorerDriver();
     }
     wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
@@ -52,6 +52,7 @@ public class ApplicationManager {
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
   }
+
   public ContactHelper getContactHelper() {
     return contactHelper;
   }
