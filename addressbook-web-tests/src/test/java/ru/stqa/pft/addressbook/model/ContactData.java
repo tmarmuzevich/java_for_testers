@@ -105,4 +105,8 @@ public class ContactData {
   public int hashCode() {
     return Objects.hash(id, firstName, lastName);
   }
+
+  public int getId() {
+    return id;
+  }
 }
