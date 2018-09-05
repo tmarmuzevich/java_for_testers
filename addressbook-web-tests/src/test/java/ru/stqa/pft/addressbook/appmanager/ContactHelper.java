@@ -51,8 +51,8 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form[2]/input[2]"));
   }
 
-  public void goToEditPage() {
-    click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+  public void goToEditPage(int index) {
+    wd.findElements(By.xpath("//td[8]")).get(index).click();
   }
 
   public void submitContactModification() {
