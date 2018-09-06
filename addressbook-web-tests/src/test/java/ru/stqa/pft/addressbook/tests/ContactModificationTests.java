@@ -13,7 +13,7 @@ public class ContactModificationTests extends TestBase {
 
   public void testContactModification() {
 
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     if (!app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData("Tanya", "Mrmuzevich",
               "murza", "A1QA", "Minsk, Rafieva str", "+375297634002",
@@ -27,7 +27,7 @@ public class ContactModificationTests extends TestBase {
             "tmarmuzevich@gmail.com", "1987", "null");
     app.getContactHelper().fillContactForm(contact, false);
     app.getContactHelper().submitContactModification();
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
 
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size());
@@ -45,7 +45,7 @@ public class ContactModificationTests extends TestBase {
 
   public void testContactModificationFromDetailPage() {
 
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     if (!app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData("Tanya", "Mrmuzevich",
               "murza", "A1QA", "Minsk, Rafieva str", "+375297634002",
@@ -59,7 +59,7 @@ public class ContactModificationTests extends TestBase {
             "tmarmuzevich@gmail.com", "1987", "null");
     app.getContactHelper().fillContactForm(contact, false);
     app.getContactHelper().submitContactModification();
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
 
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size());
