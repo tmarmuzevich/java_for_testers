@@ -44,43 +44,46 @@ public class ContactData {
     this.group = group;
   }
 
+  public int getId() {
+    return id;
+  }
   public String getFirstName() {
     return firstName;
   }
-
   public String getLastName() {
     return lastName;
   }
-
   public String getNickname() {
     return nickname;
   }
-
   public String getCompany() {
     return company;
   }
-
-
   public String getAddress() {
     return address;
   }
-
   public String getMobile() {
     return mobile;
   }
-
   public String getEmail() {
     return email;
   }
-
   public String getByear() {
     return byear;
   }
-
   public String getGroup() {
     return group;
   }
 
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return Objects.equals(firstName, that.firstName) &&
+            Objects.equals(lastName, that.lastName);
+  }
 
   @Override
   public String toString() {
@@ -92,21 +95,7 @@ public class ContactData {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id &&
-            Objects.equals(firstName, that.firstName) &&
-            Objects.equals(lastName, that.lastName);
-  }
-
-  @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName);
-  }
-
-  public int getId() {
-    return id;
+    return Objects.hash(firstName, lastName);
   }
 }
