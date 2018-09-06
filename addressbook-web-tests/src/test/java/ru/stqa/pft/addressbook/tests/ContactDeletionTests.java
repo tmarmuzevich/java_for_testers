@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ContactDeletionTests extends TestBase {
 
-  //@Test
+  @Test (enabled=false)
   public void testContactDeletion() {
     app.getNavigationHelper().goToHomePage();
     if (!app.getContactHelper().isThereAContact()) {
@@ -30,7 +30,7 @@ public class ContactDeletionTests extends TestBase {
     Assert.assertEquals(before, after);
   }
 
-  @Test
+  @Test(enabled=false)
   public void testContactDeletionFromEditPage() {
     app.getNavigationHelper().goToHomePage();
     if (!app.getContactHelper().isThereAContact()) {
