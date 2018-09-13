@@ -3,50 +3,70 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-  private int id;
-  private final String firstName;
-  private final String lastName;
-  private final String nickname;
-  private final String company;
-  private final String address;
-  private final String mobile;
-  private final String email;
-  private final String byear;
+  private int id = Integer.MAX_VALUE;
+  private  String firstName;
+  private  String lastName;
+  private  String nickname;
+  private  String company;
+  private  String address;
+  private  String mobile;
+  private  String email;
+  private  String byear;
   private String group;
 
-  public ContactData(int id, String firstName, String lastName, String nickname,
-                     String company, String address, String mobile, String email,
-                     String byear, String group) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.nickname = nickname;
-    this.company = company;
-    this.address = address;
-    this.mobile = mobile;
-    this.email = email;
-    this.byear = byear;
-    this.group = group;
-  }
-
-  public ContactData(String firstName, String lastName, String nickname,
-                     String company, String address, String mobile, String email,
-                     String byear, String group) {
-    this.id = Integer.MAX_VALUE;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.nickname = nickname;
-    this.company = company;
-    this.address = address;
-    this.mobile = mobile;
-    this.email = email;
-    this.byear = byear;
-    this.group = group;
-  }
 
   public int getId() {
     return id;
   }
+
+    public ContactData withId(int id){
+      this.id = id;
+      return this;
+    }
+  public ContactData withFirstName(String firstName){
+    this.firstName = firstName;
+    return this;
+  }
+  public ContactData withLastName(String lastName){
+    this.lastName = lastName;
+    return this;
+  }
+
+  public ContactData withNickname(String nickname) {
+    this.nickname = nickname;
+    return this;
+  }
+
+  public ContactData withCompany(String company) {
+    this.company = company;
+    return this;
+  }
+
+  public ContactData withAddress(String address) {
+    this.address = address;
+    return this;
+  }
+
+  public ContactData withMobile(String mobile) {
+    this.mobile = mobile;
+    return this;
+  }
+
+  public ContactData withEmail(String email) {
+    this.email = email;
+    return this;
+  }
+
+  public ContactData withByear(String byear) {
+    this.byear = byear;
+    return this;
+  }
+
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
+  }
+
   public String getFirstName() {
     return firstName;
   }

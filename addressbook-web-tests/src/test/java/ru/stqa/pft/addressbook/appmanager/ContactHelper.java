@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContactHelper extends HelperBase {
@@ -21,7 +21,7 @@ public class ContactHelper extends HelperBase {
   }
 
 
-  public void gotoNewContactCreationPage() {
+  public void creation() {
     click(By.linkText("add new"));
   }
 
@@ -38,9 +38,12 @@ public class ContactHelper extends HelperBase {
     }
   }
 
-
   public void selectContact(int index) {
     wd.findElements(By.name("selected[]")).get(index).click();
+  }
+
+  public void selectContactById(int id) {
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
   }
 
   public void deleteSelectedContact() {
@@ -55,6 +58,10 @@ public class ContactHelper extends HelperBase {
     wd.findElements(By.xpath("//td[8]")).get(index).click();
   }
 
+  public void goToEditPageById(int id) {
+    wd.findElement(By.xpath("//a[@href='edit.php?id=" + id + "']")).click();
+  }
+
   public void submitContactModification() {
     click(By.xpath("//div[@id='content']/form[1]/input[22]"));
   }
@@ -63,19 +70,56 @@ public class ContactHelper extends HelperBase {
     wd.findElements(By.xpath("//td[7]")).get(index).click();
   }
 
+  public void goToDetailsPageById(int id) {
+    wd.findElement(By.xpath("//a[@href='view.php?id=" + id + "']")).click();
+  }
+
   public void initModification() {
     click(By.name("modifiy"));
   }
 
 
-  public void createContact(ContactData contact) {
-    gotoNewContactCreationPage();
+  public void create(ContactData contact) {
+    creation();
     fillContactForm(contact, true);
     enterCreationNewContact();
     goToHomePage();
   }
 
-  private void goToHomePage() {
+  public void modify(ContactData contact) {
+    goToEditPageById(contact.getId());
+    fillContactForm(contact, false);
+    submitContactModification();
+    goToHomePage();
+  }
+
+  public void modifyFromDetailPage(ContactData contact) {
+    goToDetailsPageById(contact.getId());
+    initModification();
+    fillContactForm(contact, false);
+    submitContactModification();
+    goToHomePage();
+  }
+
+  public void delete(ContactData contact) {
+    selectContactById(contact.getId());
+    deleteSelectedContact();
+    closeAlert();
+    goToHomePage();
+  }
+
+  public void deleteFromEditPage(ContactData contact) {
+    goToEditPageById(contact.getId());
+    deleteContact();
+    goToHomePage();
+  }
+
+
+  public void closeAlert() {
+    wd.switchTo().alert().accept();
+  }
+
+  public void goToHomePage() {
     if (isElementPresent(By.id("maintable"))) {
       return;
     }
@@ -86,17 +130,18 @@ public class ContactHelper extends HelperBase {
     return isElementPresent(By.xpath("//div/div[4]/form[2]/table/tbody/tr[2]/td[1]/input"));
   }
 
-  public List<ContactData> getContactList() {
-    List<ContactData> contacts = new ArrayList<ContactData>();
+  public Contacts all() {
+    Contacts contacts = new Contacts();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for (WebElement element : elements) {
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
       String lastName = element.findElement(By.xpath(".//td[2]")).getText();
       String firstName = element.findElement(By.xpath(".//td[3]")).getText();
-      ContactData contact = new ContactData(id, firstName, lastName, null, null, null, null, null, null, null);
-      contacts.add(contact);
+      contacts.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName));
     }
 
     return contacts;
   }
+
+
 }
