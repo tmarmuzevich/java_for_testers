@@ -9,7 +9,9 @@ public class ContactData {
   private  String nickname;
   private  String company;
   private  String address;
+  private  String home;
   private  String mobile;
+  private  String work;
   private  String email;
   private  String byear;
   private String group;
@@ -49,6 +51,16 @@ public class ContactData {
 
   public ContactData withMobile(String mobile) {
     this.mobile = mobile;
+    return this;
+  }
+
+  public ContactData withHome(String home) {
+    this.home = home;
+    return this;
+  }
+
+  public ContactData withWork(String work) {
+    this.work = work;
     return this;
   }
 
@@ -94,7 +106,12 @@ public class ContactData {
   public String getGroup() {
     return group;
   }
-
+  public String getHome() {
+    return home;
+  }
+  public String getWork() {
+    return work;
+  }
 
   @Override
   public boolean equals(Object o) {
