@@ -17,6 +17,11 @@ public class ContactData {
   private String group;
 
 
+
+
+
+  private String allPhones;
+
   public int getId() {
     return id;
   }
@@ -79,6 +84,11 @@ public class ContactData {
     return this;
   }
 
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
+  }
+
   public String getFirstName() {
     return firstName;
   }
@@ -112,6 +122,10 @@ public class ContactData {
   public String getWork() {
     return work;
   }
+  public String getAllPhones() {
+    return allPhones;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -135,4 +149,6 @@ public class ContactData {
   public int hashCode() {
     return Objects.hash(firstName, lastName);
   }
+
+
 }
