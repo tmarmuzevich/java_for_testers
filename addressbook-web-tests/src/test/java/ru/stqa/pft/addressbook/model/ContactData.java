@@ -1,44 +1,56 @@
 package ru.stqa.pft.addressbook.model;
 
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
   private int id = Integer.MAX_VALUE;
-  private  String firstName;
-  private  String lastName;
-  private  String nickname;
-  private  String company;
-  private  String address;
-  private  String home;
-  private  String mobile;
-  private  String work;
-  private  String email1;
-  private  String email2;
-  private  String email3;
-  private  String byear;
+  private String firstName;
+  private String lastName;
+  private String nickname;
+  private String company;
+  private String address;
+  private String home;
+  private String mobile;
+  private String work;
+  private String email1;
+  private String email2;
+  private String email3;
+  private String byear;
   private String group;
   private String allPhones;
   private String allEmails;
+  private File photo;
 
 
   public String getAllEmails() {
     return allEmails;
   }
 
+  public File getPhoto() {
+    return photo;
+  }
+
+  public ContactData withPhoto(File photo) {
+    this.photo = photo;
+    return this;
+  }
 
   public int getId() {
     return id;
   }
 
-    public ContactData withId(int id){
-      this.id = id;
-      return this;
-    }
-  public ContactData withFirstName(String firstName){
+  public ContactData withId(int id) {
+    this.id = id;
+    return this;
+  }
+
+  public ContactData withFirstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
-  public ContactData withLastName(String lastName){
+
+  public ContactData withLastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -77,10 +89,12 @@ public class ContactData {
     this.email1 = email1;
     return this;
   }
+
   public ContactData withEmail2(String email2) {
     this.email2 = email2;
     return this;
   }
+
   public ContactData withEmail3(String email3) {
     this.email3 = email3;
     return this;
@@ -100,6 +114,7 @@ public class ContactData {
     this.allPhones = allPhones;
     return this;
   }
+
   public ContactData withAllEmails(String allEmails) {
     this.allEmails = allEmails;
     return this;
@@ -108,42 +123,55 @@ public class ContactData {
   public String getFirstName() {
     return firstName;
   }
+
   public String getLastName() {
     return lastName;
   }
+
   public String getNickname() {
     return nickname;
   }
+
   public String getCompany() {
     return company;
   }
+
   public String getAddress() {
     return address;
   }
+
   public String getMobile() {
     return mobile;
   }
+
   public String getEmail1() {
     return email1;
   }
+
   public String getEmail2() {
     return email2;
   }
+
   public String getEmail3() {
     return email3;
   }
+
   public String getByear() {
     return byear;
   }
+
   public String getGroup() {
     return group;
   }
+
   public String getHome() {
     return home;
   }
+
   public String getWork() {
     return work;
   }
+
   public String getAllPhones() {
     return allPhones;
   }
