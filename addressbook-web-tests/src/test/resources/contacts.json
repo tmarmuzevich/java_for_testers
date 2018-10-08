@@ -3,15 +3,5 @@
     "firstName": "test 0",
     "lastName": "LastName 0",
     "nickname": "Nickname 0"
-  },
-  {
-    "firstName": "test 1",
-    "lastName": "LastName 1",
-    "nickname": "Nickname 1"
-  },
-  {
-    "firstName": "test 2",
-    "lastName": "LastName 2",
-    "nickname": "Nickname 2"
   }
 ]
