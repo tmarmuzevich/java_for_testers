@@ -63,7 +63,11 @@ public class ContactData {
   }
 
   public File getPhoto() {
+    if (photo != null){
     return new File (photo);
+  } else{
+    return null;
+    }
   }
 
   public ContactData withPhoto(File photo) {
@@ -210,6 +214,8 @@ public class ContactData {
   public String getAllPhones() {
     return allPhones;
   }
+
+
 
   @Override
   public boolean equals(Object o) {
