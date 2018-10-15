@@ -28,6 +28,7 @@ public class ContactData {
   private String nickname;
   @Transient
   private String company;
+  @Expose
   @Transient
   private String address;
   @Column(name = "home")
@@ -35,6 +36,7 @@ public class ContactData {
   private String home;
   @Column(name = "mobile")
   @Type(type = "text")
+  @Expose
   private String mobile;
   @Column(name = "work")
   @Type(type = "text")
@@ -238,6 +240,9 @@ public class ContactData {
             "id=" + id +
             ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
+            ", nickname='" + nickname + '\'' +
+            ", address='" + address + '\'' +
+            ", mobile='" + mobile + '\'' +
             '}';
   }
 
