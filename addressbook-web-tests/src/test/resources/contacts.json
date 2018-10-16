@@ -4,6 +4,7 @@
     "lastName": "LastName 0",
     "nickname": "Nickname 0",
     "address": "Address 0",
+    "home": "+18728065520",
     "mobile": "+18728065510"
   },
   {
@@ -11,6 +12,7 @@
     "lastName": "LastName 1",
     "nickname": "Nickname 1",
     "address": "Address 1",
+    "home": "+18728065521",
     "mobile": "+18728065511"
   },
   {
@@ -18,6 +20,7 @@
     "lastName": "LastName 2",
     "nickname": "Nickname 2",
     "address": "Address 2",
+    "home": "+18728065522",
     "mobile": "+18728065512"
   },
   {
@@ -25,6 +28,7 @@
     "lastName": "LastName 3",
     "nickname": "Nickname 3",
     "address": "Address 3",
+    "home": "+18728065523",
     "mobile": "+18728065513"
   }
 ]

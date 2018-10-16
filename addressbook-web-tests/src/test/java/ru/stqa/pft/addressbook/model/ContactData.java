@@ -33,6 +33,7 @@ public class ContactData {
   private String address;
   @Column(name = "home")
   @Type(type = "text")
+  @Expose
   private String home;
   @Column(name = "mobile")
   @Type(type = "text")
